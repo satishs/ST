@@ -1,0 +1,24 @@
+<div id="display">
+  <h3>Login</h3>
+
+  <% form_for(@user_session) do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+      <%= f.label :email %><br />
+      <%= f.text_field :email %>
+    </p>
+    <p>
+      <%= f.label :password %><br />
+      <%= f.password_field :password %>
+    </p>
+    <p>
+      <%= f.submit 'Submit' %>
+    </p>
+
+      <span style="font-size:80%"><%= link_to "Forgot Password", new_password_reset_path %> | 
+      <%= link_to "Register", new_user_path %></span>
+
+  <% end %>
+  <br />
+</div>

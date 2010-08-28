@@ -1,0 +1,1 @@
+Buy from <span style="color:blue;"> <%= link_to "#{line_item.vendor.name}", :controller => 'posts', :action => 'sponser_gift', :line_item_id => line_item %> </span> for <%= line_item.price %> <br />

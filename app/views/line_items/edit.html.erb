@@ -1,0 +1,32 @@
+<div id='display'>
+  <h2>Editing line_item</h2>
+
+    <% form_for(@line_item) do |f| %>
+      <%= f.error_messages %>
+      
+      <p>
+        Vendor <br />
+        <%= select_tag(:vendor, options_from_collection_for_select(Vendor.all, 'id', 'name', selected = @line_item.vendor.id) ) %>
+      </
+      </p>
+     
+      <p>
+        <%= f.label :price %><br />
+        <%= f.text_field :price %>
+      </p>
+      <p>
+        <%= f.label :url %><br />
+        <%= f.text_field :url %>
+      </p>
+      <p>
+        <%= f.label :validity %><br />
+        <%= f.datetime_select :validity %>
+      </p>
+      <p>
+        <%= f.submit 'Update' %>
+      </p>
+    <% end %>
+
+    <%= link_to 'Show', @line_item %> |
+    <%= link_to 'Back', line_items_path %>
+</div>

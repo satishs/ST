@@ -1,0 +1,24 @@
+<div id='display'>
+    <h2>New organization</h2>
+
+    <% form_for(@organization) do |f| %>
+      <%= f.error_messages %>
+
+      <p>
+        <%= f.label :name %><br />
+        <%= f.text_field :name %>
+      </p>
+      <p>
+        <%= f.label :url %><br />
+        <%= f.text_field :url %>
+      </p>
+      <p>
+        <%= f.label :description %><br />
+        <%= f.text_area :description, :size => "60x7" %>
+      </p>
+      <p>
+        <%= f.submit 'Create' %> | 
+        <%= link_to 'Cancel', organizations_path %>
+      </p>
+    <% end %>
+</div>

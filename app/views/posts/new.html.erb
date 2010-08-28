@@ -1,0 +1,33 @@
+<div id='display'>
+    <h2>New post</h2>
+
+
+    <% form_for(@post) do |f| %>
+      <%= f.error_messages %>
+
+      <p>
+        <%= f.label :product_name %><br />
+        <%= f.text_field :product_name %>
+      </p>
+      <p>
+        <%= f.label :kids_tag %><br />
+        <%= f.text_field :kids_tag %>
+      </p>
+      <p>
+        <%= f.label :age %><br />
+        <%= f.text_field :age %>
+      </p>
+      <p>
+        Organization <br />
+        <%= select_tag(:organization, options_from_collection_for_select(Organization.all, 'id', 'name' ) ) %>
+      </p>
+      <p>
+        <%= f.label :description %><br />
+        <%= f.text_area :description, :size => "60x7" %>
+      </p>
+      <p>
+        <%= f.submit 'Create' %> |
+        <%= link_to 'Cancel', posts_path %>
+      </p>
+    <% end %>
+</div>

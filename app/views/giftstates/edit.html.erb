@@ -1,0 +1,16 @@
+<h1>Editing giftstate</h1>
+
+<% form_for(@giftstate) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @giftstate %> |
+<%= link_to 'Back', giftstates_path %>

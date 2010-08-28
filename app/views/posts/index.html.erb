@@ -1,0 +1,19 @@
+<div id='display'>
+     <div id='search'>
+        <% form_tag search_path, :method => :get do %>
+            <%= text_field_tag :search, params[:search], :size => "50x1" %>
+            <%= submit_tag 'Search' %>
+        <% end %>
+    </div>
+    
+    <% if current_user %>
+        <div id='new_post'>
+            <%= button_to 'New post', new_post_path %>
+        </div><br />
+    <% end %>
+  
+<br />
+   <h2>Listing Gifts</h2>
+    <%= render :partial => 'post', :collection => @posts %>
+</div>
+

@@ -1,0 +1,20 @@
+<h1>Listing giftstates</h1>
+
+<table>
+  <tr>
+    <th>State</th>
+  </tr>
+
+<% @giftstates.each do |giftstate| %>
+  <tr>
+    <td><%=h giftstate.state %></td>
+    <td><%= link_to 'Show', giftstate %></td>
+    <td><%= link_to 'Edit', edit_giftstate_path(giftstate) %></td>
+    <td><%= link_to 'Destroy', giftstate, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New giftstate', new_giftstate_path %>

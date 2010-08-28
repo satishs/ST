@@ -1,0 +1,23 @@
+<p>
+  <b>Vendor:</b>
+  <%=h @line_item.vendor.name %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%=h @line_item.price %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%=h @line_item.url %>
+</p>
+
+<p>
+  <b>Validity:</b>
+  <%=h @line_item.validity %>
+</p>
+
+
+<%= link_to 'Edit', edit_line_item_path(@line_item) %> |
+<%= link_to 'Back', line_items_path %>

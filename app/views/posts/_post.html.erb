@@ -1,0 +1,29 @@
+<div id="post-description">
+    <%= post.description %><br/>
+    If you are interested follow the steps below to sponser 
+  
+    <div class="post-details">
+        Organization: <%= post.organization.name %> | 
+        Post since <span style="color:blue"> <%= post.updated_at.to_s(:short) %></span>
+    </div>
+
+    <div id = "post-links" >
+        <% if current_user %>
+            <%= link_to 'Edit', edit_post_path(post) %>
+            <%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %>
+            <%= link_to "Add LineItem", :controller => 'line_items', :action => 'new', :post_id => post.id %>
+        <% end %>
+    </div>
+
+    <div id='line_item'>            
+        <% button_to "Sponsored", {:action => 'capture_orderno', :id => post} %>
+        <% post.line_items.each do |line_item| %>
+          <%= link_to "Product price on #{line_item.vendor.name} #{number_to_currency(line_item.price)}", {:action => 'sponsor_gift', :id => post, :line_item_id => line_item}, :popup => true %> 
+            <span style="font-size:90%"><%= link_to "(sponser)", {:action => 'add_to_cart', :post_id => post, :line_item_id => line_item} %></span><br/>
+            
+        <% end %>
+    </div>
+
+    <% @page_index.to_i %>
+    
+</div>

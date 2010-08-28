@@ -1,0 +1,23 @@
+<p>
+  <b>Product name:</b>
+  <%=h @post.product_name %>
+</p>
+
+<p>
+  <b>Kids tag:</b>
+  <%=h @post.kids_tag %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%=h @post.age %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @post.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

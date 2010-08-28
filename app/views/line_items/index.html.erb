@@ -1,0 +1,23 @@
+<div id='display'>
+
+      <h2>Listing line_items</h2>
+
+      <table>
+        <tr>
+          <th>Price</th>
+          <th>Url</th>
+          <th>Validity</th>
+        </tr>
+
+      <% @line_items.each do |line_item| %>
+        <tr>
+          <td><%=h line_item.price %></td>
+          <td><%=h line_item.url %></td>
+          <td><%=h line_item.validity %></td>
+          <td><%= link_to 'Show', line_item %></td>
+          <td><%= link_to 'Edit', edit_line_item_path(line_item) %></td>
+          <td><%= link_to 'Destroy', line_item, :confirm => 'Are you sure?', :method => :delete %></td>
+        </tr>
+      <% end %>
+      </table>
+</div>      

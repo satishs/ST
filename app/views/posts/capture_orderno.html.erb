@@ -1,0 +1,16 @@
+<div id='display'>
+    <h2>Provide the order/tracking number</h2>
+    
+    <div id='capture_order_no'>
+        <% form_tag :action => 'sponsored', :id => @post, :method => 'post' do %>
+          
+        <p>
+            Vendor <br />
+            <%= select_tag(:vendor, options_from_collection_for_select(Vendor.all, 'id', 'name' ) ) %>
+        </p>
+
+            Order/Tracking No<br /><%= text_field_tag :orderno, params[:orderno], :size => "50x1" %>
+            <%= submit_tag 'Done' %>
+        <% end %>
+    </div>
+</div>

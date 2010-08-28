@@ -1,0 +1,8 @@
+  <%= link_to "#{organization.name}", organization %>
+  <%=h organization.url %>
+  <%=h organization.description %>
+  <% if current_user %>
+      <%= link_to 'Edit', edit_organization_path(organization) %>
+      <%= link_to 'Destroy', organization, :confirm => 'Are you sure?', :method => :delete %>
+  <% end %>
+  <br />

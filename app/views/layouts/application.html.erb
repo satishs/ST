@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Sharing Tree</title>
+  <%= stylesheet_link_tag 'post' %>
+  <script src="/javascripts/prototype.js" type="text/javascript"></script>
+  <script src="/javascripts/effects.js" type="text/javascript"></script>
+  <script src="/javascripts/controls.js" type="text/javascript"></script>
+ 
+    <%= include_yui_editor_if_used %>
+
+</head>
+<body>
+
+<div id="header">
+<div class="logo">
+    ST
+</div>
+
+<ul>
+    <div id="nav_user">
+        <li><%= link_to "Home", posts_path %> | </li>
+        <li><%= link_to "My Cart", {:controller => :posts, :action => "add_to_cart" }, :method => 'post'%> | </li>
+         <% if current_user %>
+          <li><%= link_to "My Account", edit_user_path(current_user) %> | </li>
+          <li><%= link_to "Logout", logout_path %> </li>
+         <% else %>
+           <li><%= link_to "Sign Up", new_user_path %> |</li>
+           <li><%= link_to "Login", login_path %> </li>
+         <% end %> 
+</ul>
+    </div>
+
+
+<p style="color: green"><%= flash[:notice] %></p>
+
+      
+<%= yield %>
+   <div id="footer">
+     Created by Ruby on Rails Study Group @ MSEI | Comments, Suggestions, Feedback <a href="mailto:doug.cooper@biotronik.com;satish.singh@biotronik.com;hari.rajagopal@biotronik.com">Contact Us</a>
+   </div>
+</body>
+</html>

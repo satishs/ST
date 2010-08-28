@@ -1,0 +1,24 @@
+<div id='display'>
+  <h2>Cart</h2> 
+
+<% unless @cart.items.empty? %>
+  
+    Product     Vendor       Price
+
+    <% for item in @cart.items %>  
+      <div class="post-description">
+          <%= item.product_name %>
+          Amazon
+          $24
+          <%= link_to 'remove', :action => 'remove_cart_item', :id => item %>
+      </div>
+    <% end %>
+
+<br />
+
+    <% button_to 'Empty Cart', :action => 'empty_cart' %><br />
+<% end %>
+
+<%= link_to 'Add More Items', posts_path %> <br /><br />
+<%= button_to 'Make Payment', :action => 'capture_payment_details' %>
+</div>

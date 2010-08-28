@@ -1,0 +1,8 @@
+<div id='display'>
+    <%= link_to 'Login to Paypal and make payment', 'http://www.paypal.com', :popup => true %> 
+    
+        <% form_tag :action => 'sponsored', :id => @post, :method => 'post' do %>
+      
+        <br /><%= submit_tag 'Done' %>
+        <% end %>
+</div>

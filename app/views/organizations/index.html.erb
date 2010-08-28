@@ -1,0 +1,11 @@
+<div id='display'>
+    <% if current_user %>
+        <div id='new_post'>
+            <%= button_to 'New organization', new_organization_path %>
+        </div><br /><br />
+    <% end %>
+
+    <br /><h2>Listing organizations</h2>
+    <%= render :partial => 'organization', :collection => @organizations %>
+</div>
+
